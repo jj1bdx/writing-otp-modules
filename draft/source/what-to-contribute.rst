@@ -69,7 +69,7 @@ modules.
 
 .. [#wtc1] Erlang VM, or **BEAM**, has its own native functions called
            *built-in functions* (BIFs). BIFs are considered as a part of
-           ``erlang`` module of OTP.
+           `erlang <http://erlang.org/doc/man/erlang.html>`_ module of OTP.
 
 .. [#wtc2] You can even specify a version of Erlang/OTP when building a
            release, since a release is a complete set of executable
