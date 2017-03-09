@@ -32,32 +32,45 @@ quote from the guideline:
     added to the pull request automatically).
 
 Note that a proposal which contains the Erlang language and semantic
-changes should be proposed as a part of `*Erlang Enhancement Process*
+changes should be proposed as a part of `Erlang Enhancement Process
 (EEP) <http://www.erlang.org/erlang-enhancement-proposals>`_ as an
-*Erlang Extension Proposal* (also called as EEP).  You can find the
-archive of `Erlang Enhancement Process and the proposals in GitHub
+*Erlang Extension Proposal* (also called EEP).  You can find the archive
+of `Erlang Enhancement Process and the proposals in GitHub
 <https://github.com/erlang/eep>`_. In this document, I will not discuss
-the details on writing an EEP.
+the details on writing an EEP, because writing an EEP requires far
+deeper and broader knowledge than writing an OTP module.
     
 Why (not) writing Erlang/OTP modules?
 -------------------------------------
 
-In Erlang, a group of functions are called *module*. Erlang/OTP is a set
+In Erlang, a group of functions is called *module*. Erlang/OTP is a set
 of modules [#wtc1]_. Writing a module is an essential part of the OTP
 software development process. And a set of modules is called *application*.
 
-Erlang/OTP provides various useful functions as their own modules. You
-will be astonished to find out the functions in the modules provided in
-the basic two applications, `kernel
+Making a decision of writing or not writing a module should be done
+carefully.  Erlang/OTP provides various useful functions as their own
+modules. You will be astonished to find out the functions in the modules
+provided in the basic two applications, `kernel
 <http://erlang.org/doc/apps/kernel/index.html>`_ and `stdlib
-<http://erlang.org/doc/apps/stdlib/index.html>`_.
+<http://erlang.org/doc/apps/stdlib/index.html>`_. You can find many
+other functions and modules in OTP suitable for your work. A general tip
+for choosing a function to use is to always consider using the existing
+functions in the OTP modules first before reinventing or even inventing
+your own ones. In most cases you can do what you want to do by choosing
+an existing function. In short: *read the OTP documentation first*
+before writing your own code.
 
 Developers of Erlang software can write their own modules and make them
 their own applications. They can even pack their own applications
 combined with the OTP runtime environment as a *release*. In many cases
 having a *release* for your specific tasks will be sufficient for
-running your own software.
+running your own software [#wtc2]_, even you have to include your own
+modules.
 
 .. [#wtc1] Erlang VM, or **BEAM**, has its own native functions called
            *built-in functions* (BIFs). BIFs are considered as a part of
            ``erlang`` module of OTP.
+
+.. [#wtc2] You can even specify a version of Erlang/OTP when building a
+           release, since a release is a complete set of executable
+           program for an operating system.
