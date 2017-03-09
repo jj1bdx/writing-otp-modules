@@ -2,7 +2,7 @@ Introduction
 ============
 
 Erlang/OTP and the OTP Team need your help
-###########################################
+------------------------------------------
 
 `Erlang/OTP <http://www.erlang.org/>`_ is a well-designed and highly
 stable product, as well as a language and a concurrent system. Most of
@@ -26,7 +26,7 @@ committers of the `OTP GitHub Repository
 language <http://elixir-lang.org/>`_ community also help a lot.
 
 Why (not) writing Erlang/OTP modules?
-#####################################
+-------------------------------------
 
 In Erlang, a group of functions are called *module*. Erlang/OTP is a set
 of modules [#intro2]_. Writing a module is an essential part of the OTP
