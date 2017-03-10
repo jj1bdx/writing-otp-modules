@@ -46,8 +46,8 @@ four leading developers of Erlang, as `a presentation called "A History
 of Erlang" presented in HOPS III conference held in 2007
 <https://doi.org/10.1145/1238844.1238850>`_.
 
-What constitutes a contribution?
---------------------------------
+What is considered as a contribution?
+-------------------------------------
 
 Erlang/OTP has become an open source software (OSS) product
 since 1998. OSS is a community product, and every OSS has the own
@@ -61,7 +61,7 @@ Request workflow.
 Erlang/OTP has the own `contribution guideline page
 <https://github.com/erlang/otp/wiki/Contribution-Guidelines>`_. It is
 mainly focused onto contributing code, but other fixes such as those for
-the documentation is also frequently accepted.  Describing the *reason
+the documentation are also frequently accepted.  Describing the *reason
 to change* is essential for proposing a change to Erlang/OTP. Here's a
 quote from the guideline:
 
@@ -115,9 +115,58 @@ own software [#wtc2]_, even you have to include your own modules.
 Why writing Erlang/OTP modules then?
 ------------------------------------
 
+In most cases you don't have to write the modules which should reside in
+OTP. For some cases, however, you need to write and contribute your code
+to the Erlang/OTP modules. You need to consider a few issues before
+thinking about making a contribution to OTP, as described in this
+section.
 
+Is the module or new code really needed in OTP?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+OTP is part of Erlang and cannot be separated from OTP [#wtc4]_. If your
+module is accepted to OTP, that will affect *all* users of Erlang/OTP,
+including other Erlang-derived language users, such as those of Elixir
+and LFE. If your contribution is a critical bug fix, it should be merged
+as soon as possible. If it's a feature or an enhancement, it would take
+a much longer time to assess the impact of change.
 
+Who needs the new code?
+^^^^^^^^^^^^^^^^^^^^^^^
+
+If what you want to do with your contribution can be done without
+changing other parts of Erlang/OTP, it should be separated from the
+OTP. Just because your code provides a cool feature does not necessarily
+justify that the code should be a part of Erlang/OTP.
+
+Removing old code from OTP is hard
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Removing an OTP module is extremely difficult after once it is accepted
+as a part of OTP. For example, the module ``random``, which is being
+replaced by a new module ``rand`` which has become official since OTP
+18.0, will remain for two major versions; it is now *deprecated* on OTP
+version 19, and will be *removed* on OTP version 20. The life of single
+OTP version is usually one year [#wtc5]_, so *two years* will be
+required as minimum to replace an obsolete piece of code by the
+respective new code.
+
+A case study: rand module
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The module ``rand``, a pseudo random number generator which I
+contributed with Dan Gudmundsson as the corresponding OTP maintainer for
+Erlang/OTP 18.0, had many specific reasons to be a part of OTP as
+follows:
+
+* AS183, the algorithm of ``random``, has been exploited less than a day with a modern computer [#wtc6]_;
+* Finer resolution of the output, which gives sufficient precision for Erlang float numbers;
+* Much longer period for preventing prediction of *random* number values;
+* Fully compatible or even simplified API for the programmer;
+* Multiple choices of algorithms available for future extension and bugfix; and
+* the execution speed for the default algorithm is as fast as ``random`` on a modern 64bit CPU.
+
+.. rubric:: Footnotes
 
 .. [#wtc1] Erlang VM, or **BEAM**, has its own native functions called
            *built-in functions* (BIFs). BIFs are considered as a part of
@@ -131,4 +180,15 @@ Why writing Erlang/OTP modules then?
            ``bugs.erlang.org``. The bug tracking system is currently
            using Atrassian's JIRA.
 
-           
+.. [#wtc4] OTP itself has been under restructuring and may be split into
+           multiple parts of applications or modules which may be
+           classified by OTP Team. The change, however, has not been
+           happened yet as of March 2017.
+
+.. [#wtc5] In the past R14, R15, and R16 releases of OTP, the length of
+           the major version was two years. For the further details,
+           check out the release dates of each OTP release.
+
+.. [#wtc6] See https://github.com/jj1bdx/as183-c for the
+           proof-of-concept code to exploit all the possible values of
+           AS183.
