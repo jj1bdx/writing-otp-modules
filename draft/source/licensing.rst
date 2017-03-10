@@ -8,7 +8,8 @@ License of Erlang/OTP: Apache License 2.0
 -----------------------------------------
 
 Erlang/OTP has been licensed under `Apache License 2.0
-<https://www.apache.org/licenses/LICENSE-2.0>`_ since Erlang/OTP 18.0 [#license1]_.
+<https://www.apache.org/licenses/LICENSE-2.0>`_ since the release of
+Erlang/OTP 18.0 [#license1]_ on May 2015.
 
 Rami Sass explains the summary of how Apache License 2.0 works in the
 blog entry `Top 10 Apache License Questions Answered
@@ -64,6 +65,13 @@ Including MIT and BSD license code in Erlang/OTP does not require any
 special process, because both license allow relicensing of the software,
 under the restriction of keeping the original notices.
 
+CC0 license (Public Domain)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Code explicitly stated as `Creative Commons CC0 licensed
+<https://creativecommons.org/publicdomain/zero/1.0/>`_, which means
+equivalent to be placed in the Public Domain, can be freely relicensed.
+
 Relicensing your code to Erlang/OTP
 -----------------------------------
 
@@ -79,14 +87,13 @@ comply the following rules:
   Note that the notice has no "All Rights Reserved" or other words
   except the year and the name.
 
-OTP Team will let you know the exact conditions.
+OTP Team will let you know the details on the exact conditions before
+merging your code, so that the legal issues will be cleared.
 
 If you are using other authors' algorithms and code, they must be
-compatible with Apache License 2.0 of Erlang/OTP. In my case, I had to
-obtain written permissions from the original algorithm authors, unless
-explicitly stated as `Creative Commons CC0 licensed
-<https://creativecommons.org/publicdomain/zero/1.0/>`_, which means
-equivalent to be placed in the Public Domain.
+compatible with Apache License 2.0 of Erlang/OTP. You may need to obtain
+written permissions from the original algorithm authors for specific
+relicensing to Erlang/OTP.
 
 .. rubric:: Footnotes
             
