@@ -1,19 +1,21 @@
 Prototyping the modules
 =======================
 
-Create an independent testing environment
------------------------------------------
+Create an independent prototype repository
+------------------------------------------
 
 Erlang/OTP is a complex set of Erlang modules, largely dependent on each
-other. Building an independent testing environment for each development
+other. Building an independent prototype repository for each development
 project is much safer and more practical than tweaking the running
-system.
+system. Making a small independent source code repository for
+prototyping which can be integrated into other projects is a better
+choice than putting everything in a mixed-up run-time system.
 
 Building your own testing environment for Erlang/OTP
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+----------------------------------------------------
 
-Try-and-error debug on a running Erlang/OTP system is not a good idea,
-especially when the system is being used in the production
+Try-and-error debug on a running Erlang/OTP run-time system is not a
+good idea, especially when the system is being used in the production
 system. Building an independent BEAM on your own is often required,
 especially when you have to debug the BEAM or Erlang Run-Time System
 (ERTS) by yourself.
@@ -26,7 +28,7 @@ as Elixir. For Elixir, I use `kiex <https://github.com/taylor/kiex>`_ to
 use a separate environment from the system Elixir implementation.
 
 Setting up a project repository for your module
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-----------------------------------------------
 
 In a modern software development procedure, you need to set up a
 building environment before writing code. For Erlang/OTP, there are a
@@ -54,6 +56,20 @@ few building schemes to set up:
   Elixir to use mix, because mix configuration language is based on
   Elixir [#proto1]_.
 
+Execution path on loading modules
+---------------------------------
+
+For testing your own module, you need to guarantee the code of the
+module should be chosen and loaded *prior to* the system module of the
+same name [#proto2]_.
+
+When running BEAM, the loading path priority can be controlled by
+``-pa`` and ``-pz`` path of the `erl
+<http://erlang.org/doc/man/erl.html>`_ command. Some package tools have
+their own commands for setting the execution path, such as `Rebar3 shell
+command <http://ferd.ca/rebar3-shell.html>`_. On Elixir, the interactive
+shell `iex <https://hexdocs.pm/iex/IEx.html>`_ has the similar
+functionality.
 
 .. Rubric:: Footnotes
 
@@ -61,5 +77,6 @@ few building schemes to set up:
              <http://elixir-lang.org/getting-started/mix-otp/introduction-to-mix.html>`_
              as the primer for learning Mix.
 
-
+.. [#proto2] Erlang module namespace is *not* hierarchical, so the
+             module name collision may occur at any time.
 
