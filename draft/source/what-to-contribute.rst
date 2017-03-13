@@ -152,20 +152,50 @@ required as minimum to replace an obsolete piece of code by the
 respective new code.
 
 A case study: rand module
-^^^^^^^^^^^^^^^^^^^^^^^^^
+-------------------------
 
-The module ``rand``, a pseudo random number generator which I
+The module ``rand``, a pseudo random number generator (PRNG) which I
 contributed with Dan Gudmundsson as the corresponding OTP maintainer for
 Erlang/OTP 18.0, had many specific reasons to be a part of OTP as
 follows:
 
-* AS183, the algorithm of ``random``, has been exploited less than a day with a modern computer [#wtc6]_;
-* Finer resolution of the output, which gives sufficient precision for Erlang float numbers;
-* Much longer period for preventing prediction of *random* number values;
+* AS183, the algorithm of ``random``, has been exploited less than a day
+  with a modern computer [#wtc6]_, so there was a strong need to provide
+  the alternative to plug the security hole;
+* Finer resolution of the output, which gives sufficient precision for
+  Erlang float numbers;
+* Much longer period for preventing prediction of *random* number
+  values;
 * Fully compatible or even simplified API for the programmer;
-* Multiple choices of algorithms available for future extension and bugfix; and
-* the execution speed for the default algorithm is as fast as ``random`` on a modern 64bit CPU.
+* Multiple choices of algorithms available for future extension and
+  bugfix; and
+* the execution speed for the default algorithm is as fast as ``random``
+  on a modern 64bit CPU.
 
+There are also other situational factors on making ``rand`` module possible:
+
+* `Xorshift*/+ <http://xoroshiro.di.unimi.it/>`_, a compact and
+  well-tested PRNG implementation became available in the Public Domain;
+* Awareness on improving algorithms of language-specific PRNGs increased
+  (e.g, `JavaScript V8 Engine failure discovered on November 2015
+  <https://v8project.blogspot.jp/2015/12/theres-mathrandom-and-then-theres.html>`_);
+  and
+* I gained expertise of building PRNG module on Erlang/OTP by building
+  prototypes for many different algorithms. On the other hand, it took
+  *four* years to actually start implementing the ``rand`` module after
+  `the first PRNG security incident of Erlang/OTP discovered by Geoff
+  Cant on May 2011 <http://www.kb.cert.org/vuls/id/178990>`_.
+
+My lessons learned through the ``rand`` module development process are
+as follows:
+
+* Software is a sticky being. You need to convince a lot of people to
+  revise an old piece of software, even it has a critical vulnerability.
+* Contribution of lots of people are needed to actualize revision of a
+  piece of software. Having a good idea itself is *not enough*.
+* You need to take time for the whole process unravels.
+
+  
 .. rubric:: Footnotes
 
 .. [#wtc1] Erlang VM, or **BEAM**, has its own native functions called
