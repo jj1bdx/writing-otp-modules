@@ -25,7 +25,7 @@ is the tool of Erlang for performing the static analysis with the source
 code and the BEAM binary code with the debugging option enabled. You can
 invoke dialyzer as:
 
-.. code-block:: erl
+.. code-block:: sh
 
   dialyzer --build_plt --apps erts kernel stdlib
 
