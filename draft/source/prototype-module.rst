@@ -1,3 +1,5 @@
+.. -*- coding: utf-8 -*-
+   
 Prototyping the modules
 =======================
 
@@ -88,13 +90,15 @@ output from a reference implementation which is not necessarily written
 in Erlang, and compare the output with the corresponding testing
 program.
 
-For prototyping the `rand` module algorithms, I picked up the code from
-the reference implementations in C, wrote a small testing value
-generation code, collected the computed results, and embedded them into
-the unit testing code of the Erlang module. Having this kind of full
-regression tests help finding a bug possibly caused by the version
-change or implmentation glitches caused by the base Erlang/OTP
-distribution. 
+For prototyping the `rand` module algorithms into Erlang code, I picked
+up the code from the reference implementations of each candidate
+algorithm in C, wrote a small testing value generation code, collected
+the computed results, and embedded them into the unit testing code of
+the Erlang module. Having this kind of full regression tests help
+finding a bug possibly caused by the version change or implmentation
+glitches caused by the base Erlang/OTP distribution. Making the module
+for each algorithm an independent repository helped ensuring the
+correctness of the algorithm without worrying about interdependencies.
 
 .. Rubric:: Footnotes
 

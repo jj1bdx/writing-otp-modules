@@ -1,3 +1,5 @@
+.. -*- coding: utf-8 -*-
+
 Reference
 =========
 
@@ -17,10 +19,10 @@ first if you haven't.
 The following blogs and small books will help you **a lot** (and even
 worth paying for):
 
-* Fréd Hebert - http://ferd.ca/
-* Loïc Hoguin - https://ninenines.eu/articles/
-* Jesper Louis Andersen - https://medium.com/@jlouis666
-* Brujo Benavides - https://medium.com/@elbrujohalcon
+* `Fréd Hebert's blog <http://ferd.ca/>`_
+* `Loïc Hoguin's blog at Nine Nines <https://ninenines.eu/articles/>`_
+* `Jesper Louis Andersen at Medium <https://medium.com/@jlouis666>`_
+* `Brujo Benavides at Medium <https://medium.com/@elbrujohalcon>`_
 * Fréd Hebert's free ebook: `Erlang in Anger <https://www.erlang-in-anger.com/>`_
 * Loïc Hoguin's excellent ebook product: `The Erlanger Playbook
   <https://ninenines.eu/articles/erlanger-playbook/>`_
@@ -31,7 +33,9 @@ bookmarks with erlang tag
 bookmarks with elixirlang tag
 <https://www.diigo.com/profile/jj1bdx?query=%23elixirlang>`_ will also
 be useful.
-  
+
+`You can find a Japanese version of preliminary document about writing a new Erlang/OTP module for beginners here in Qiita <http://qiita.com/jj1bdx/items/fd42dfb18eb945c9f147>`_.
+
 .. Rubric:: Footnotes
 
 .. [#ref1] I believe Erlang/OTP programmers should learn all about
