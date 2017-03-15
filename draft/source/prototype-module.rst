@@ -71,6 +71,31 @@ command <http://ferd.ca/rebar3-shell.html>`_. On Elixir, the interactive
 shell `iex <https://hexdocs.pm/iex/IEx.html>`_ has the similar
 functionality.
 
+Write your own test code
+------------------------
+
+Testing code and providing a regression test set is a critical part of
+modern software development. Unit testing is essential as a minimum
+requirement. `EUnit <http://erlang.org/doc/man/eunit.html>`_ is a good
+place to start. For Erlang/OTP module development, however, providing
+tests under the `Common Test
+<http://erlang.org/doc/man/common_test.html>`_ framework is mandatory.
+
+Testing code should cover various aspects including checking the
+function arguments, value range, and error handling to reject illegal
+values. For a complex algorithm, you need to provide the reference
+output from a reference implementation which is not necessarily written
+in Erlang, and compare the output with the corresponding testing
+program.
+
+For prototyping the `rand` module algorithms, I picked up the code from
+the reference implementations in C, wrote a small testing value
+generation code, collected the computed results, and embedded them into
+the unit testing code of the Erlang module. Having this kind of full
+regression tests help finding a bug possibly caused by the version
+change or implmentation glitches caused by the base Erlang/OTP
+distribution. 
+
 .. Rubric:: Footnotes
 
 .. [#proto1] See `Introduction to Mix
