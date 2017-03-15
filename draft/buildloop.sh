@@ -1,2 +1,2 @@
 #!/bin/sh
-while true; do make html; sleep 10; done
+while true; do make html; sleep 2; done
