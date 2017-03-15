@@ -23,8 +23,12 @@ Use groups for parallel and sequential tests
 --------------------------------------------
 
 Common Test has the Test Case Groups, which allows programmers to
-enforce the sequence of executing the tests. The following code in
-``rand`` module explains the sequence of the tests to be performed, beginning from ``seed``, with a group called ``basic_stats`` and the last group of ``reference_jump``.
+enforce the sequence of executing the tests and to specify parallel
+execution of a set of tests.
+
+The following code in ``rand`` module [#ct2]_ explains the sequence of
+the tests to be performed, beginning from ``seed``, with a group called
+``basic_stats`` and the last group of ``reference_jump``.
 
 .. code-block:: erlang
 
@@ -39,7 +43,9 @@ enforce the sequence of executing the tests. The following code in
 
 You need to list all the test functions and groups in  ``all/0``.
 
-The group properties are defined in ``groups/0`` as follows:
+The group properties are defined in ``groups/0`` as follows, setting
+*parallel execution* flag for each of the two groups with the test
+functions in the group:
 
 .. code-block:: erlang
 
@@ -48,9 +54,13 @@ The group properties are defined in ``groups/0`` as follows:
       [basic_stats_uniform_1, basic_stats_uniform_2, basic_stats_normal]},
      {reference_jump, [parallel],
       [reference_jump_state, reference_jump_procdict]}].
-
+     
 .. Rubric:: Footnotes
 
 .. [#ct1] For example, the Common Test cases for ``rand`` module is at
           ``lib/stdlib/test/rand_SUITE.erl`` in the OTP source code
           tree, since ``rand`` is a part of ``stdlib`` application.
+
+.. [#ct2] The code will be appeared on OTP 20. See
+          https://github.com/erlang/otp/commit/1c000086275c06596ad402081be12ef95db6ea40
+          for the details.
