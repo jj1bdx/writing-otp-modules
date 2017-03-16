@@ -1,3 +1,5 @@
+.. -*- coding: utf-8 -*-
+
 Deciding what to contribute
 ===========================
 

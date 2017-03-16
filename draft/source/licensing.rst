@@ -1,3 +1,5 @@
+.. -*- coding: utf-8 -*-
+
 Solving licensing issues of contributed code
 ============================================
 

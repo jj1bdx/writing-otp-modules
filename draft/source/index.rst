@@ -1,3 +1,5 @@
+.. -*- coding: utf-8 -*-
+
 .. writing_otp_module documentation master file, created by
    sphinx-quickstart on Mon Feb 27 22:54:47 2017.
    You can adapt this file completely to your liking, but it should at least
@@ -5,6 +7,9 @@
 
 Writing OTP Modules
 ===================
+
+This document is about how to write and release an Erlang/OTP module as a part
+of Erlang/OTP.
 
 .. toctree::
    :numbered:
