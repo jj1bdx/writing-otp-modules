@@ -225,6 +225,56 @@ San Francisco, CA, USA
 
 ---
 
+# Promote your code
+
+* **Publish ready-to-use modules on GitHub and elsewhere**
+* **`rand` module have *six* related modules released**
+* **Give talks and publish papers on conferences**
+* **Write a PoC and show what the problem is**
+
+^ For earning the community support, promoting your code is essential. Publishing ready-to-use modules is effective for obtaining feedbacks from other developers. Rand module have six related published modules. Giving talks and publishing papers on conferences are also effective. Rand module have six presentations in major conferences, workshops, and meetups. If your code is related to a security issue, writing a proof-of-concept code and showing the problem will help convincing OTP Team to understand the severity of the issue.
+
+---
+
+# Code maintenance and support
+
+* **When your code is in OTP you are responsible as the same as the OTP maintainers for the part of the code**
+* **You are expected to contribute a further enhancement or a new feature when they are available**
+* **Old code may be deprecated and removed**
+* **Adding new features should be done _very carefully_**
+
+^ When you add a module to Erlang/OTP, that means you are also responsible for maintaining the module, especially when the security issues or vulnerabilities are found. You have no legal duty but are supposed to provide a help when it is requested by the OTP Team. you are also expected to contribute a further enhancement or a new feature when they are available. An unmaintained piece of code will be deprecated and removed from OTP by the OTP Team's discretion. Also, OTP Team generally takes conservative approach to change,s o you need to be careful on adding a new feature to an existing module.
+
+___
+
+# Licenses for Erlang/OTP
+
+* **Erlang/OTP: Apache License 2 (APLv2)**
+* **APLv2: *inconpatible* with GPLv2 and GPLv3**
+* **MIT and BSD License code can be easily incorporated**
+* **Your code may need to be relicensed to OTP Team**
+  - The copyright notice is limited in simple manners
+
+^ Erlang/OTP has been licensed under Apache License 2.0 since OTP 18. Mixing source code which has other licenses than Apache License 2.0 should be done carefully. For example, software under GNU Public License (GPL) cannot be directly linked to Erlang/OTP, due to the license compatiblity with Apache License 2.0. ncluding MIT and BSD license code in Erlang/OTP does not require any special process. You may need to relicense your code to OTP Team. OTP Team will let you know the details on the exact conditions before merging your code, so that the legal issues will be cleared.
+
+---
+
+![](matheus-ferrero-183749-slide.jpg)
+
+# OTP needs your help
+
+## [fit] Your contribution is always welcome
+
+^ To conclude this presentation, I would like to emphasize that the Erlang community and OTP Team always need your help to fix the bugs and improve the software. I'd be glad if this presentation helps you to understand how the Erlang/OTP is maintained and how the project is governed.
+
+---
+
+# References
+
+* [My WIP document: Writing OTP Modules](http://docs.jj1bdx.tokyo/writing-otp-modules/html/index.html)
+* [Source of Writing OTP Modules](https://github.com/jj1bdx/writing/otp-modules)
+
+^ I've written a work-in-progress document regarding this presentation called Writing OTP Modules. Your feedback to the document is highly welcome.
 
 ---
 
@@ -258,12 +308,17 @@ San Francisco, CA, USA
 
 ---
 
+[.autoscale: true]
+
 Photo credits:
 
 * Title slide: Davide Ragusa, from Unsplash.com
-* My face: Yutaka Sakurai, Naoki Sakurai
+* Kenji Rikitake's face: Yutaka Sakurai and Naoki Sakurai, taken in front of USS Pampanito at Pier 45, San Francisco, CA, USA, March 2015
 * "This talk is not about" slide: Markus Spiske, from Unsplash.com
+* "OTP needs your help" slide: Matheus Ferrero, from Unsplash.com
 * "Thank you" slide: Chris Brignola, from Unsplash.com
+
+(All Unsplash.com photos are licensed under Creative Commons CC0 License)
 
 <!-- Local Variables: -->
 <!-- coding: utf-8 -->
