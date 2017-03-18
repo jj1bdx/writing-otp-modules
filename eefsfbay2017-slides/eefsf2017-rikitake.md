@@ -67,11 +67,51 @@ San Francisco, CA, USA
 
 ---
 
-# Writing a new Erlang/OTP module
+# WARNING
 
-* Is the module or new code really needed in OTP?
-* Who needs the new code?
-* Removing old code from OTP is hard
+## Don't try commiting code only for nurturing your ego or just for your own fame, please
+
+^ There's one thing I need to mention before getting into the details. I've observed that quite a lot of people write software for their psycological need for approval, and for their own fame. It is a bad approach for writing open source software, and often becomes destructive to the project. So don't do it.
+
+---
+
+# Why new code?
+
+## Bugfix/security
+## New features
+## "Fix what I don't like"
+
+^ There are many reasons for writing a new piece of code. The most critical one is for fixing a bug and closing the security holes. And people want new features, or invent some cool stuff. Some people want to change what they don't like.
+
+---
+
+# Do you have to change OTP?
+
+## OTP is for *all* Erlang users
+## Who needs new code?
+## Once committed, removal is hard
+
+^ You need to think carefully before trying to change the OTP. OTP is for all Erlang users, including the Elixir and other language users, so changing it may affect many people. You also need to think about who needs the code. If the code is a critical security fix it'll be accepted in short time, but if it's a new feature more design discussion will be needed. And you need to remember, once code is committed, removing it is a very difficult task.
+
+---
+
+# [fit] Rationale for `rand` module
+
+* **`random` module period is too short and exploitable within <10 hours with a modern desktop computer, so it's basically a security fix**
+* **Fixing API: eliminating the need for initialization**
+* **New features: selecting multiple algorithms, normal distribution generator, jump functions from OTP 20**
+
+^ The rational for including rand module was mainly to fix the security issues of random module. The random module is exploitable within less than 10 hours. Eliminating the need for initialization is an improvement for the API. Selecting multiple algorithms and providing normal distribution generator are already available as the new features. From OTP 20 you will be able to use the jump functions too. The important point is that you need to have a rationale that can convince all users of Erlang.
+
+---
+
+# Prototyping
+
+## Independent repository
+## Common Test and Dialyzer
+## Learn erl_docgen
+
+^ When you decide to write your own Erlang module, the first thing you need to do is to make an independent repository. Isolating code under development from existing systems will make the testing easier. You also need to learn Common Test, which is the default testing framework for OTP, and Dialyzer, to provide function and data type specifications. You also need to be fluent in erl_docgen, which is an XML-based documentation system.
 
 ---
 
