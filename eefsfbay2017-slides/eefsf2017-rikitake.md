@@ -55,7 +55,7 @@ San Francisco, CA, USA
 
 ## Development for Erlang/OTP
 ## Working with OTP Team
-## How to gain support of your code
+## Gaining support for your code
 
 ^ In this talk, I will explain what I've learned from writing an Erlang module for the OTP. I will include three major topics: developing software for OTP, working with the OTP Team, and how to gain the community support of your code.
 
@@ -115,11 +115,44 @@ San Francisco, CA, USA
 
 ---
 
-# Working with OTP Team
+# erl_docgen document example
+
+```xml
+<func>
+  <name name="jump" arity="0"/>
+  <fsummary>Return the seed after performing jump calculation
+      to the state in the process dictionary.</fsummary>
+  <desc><marker id="jump-0" />
+      <p>Returns the state
+          after performing jump calculation
+          to the state in the process dictionary.</p>
+  <p>This function generates a <c>not_implemented</c> error exception
+       when the jump function is not implemented for
+       the algorithm specified in the state
+       in the process dictionary.</p>
+  </desc>
+</func>
+```
+
+^ This is an erl_docgen document example taken from the rand module document. It's neither a Markdown nor an HTML. 
 
 ---
 
-# How to gain support of your code
+![](rand-erl_docgen.png)
+
+^ This an an example of HTML page rendered from the erl_docgen document.
+
+---
+
+# Working with OTP Team
+
+^ Now I'd like to talk about how to work with OTP Team.
+
+---
+
+# Let me show you some excellent tweets from the author of Cowboy HTTP server
+
+^ I'm going to show you a couple of tweets from Loïc Hoguin, the author of Cowboy, telling tips on getting your patches or pull requests merged, on February 2017.
 
 ---
 
@@ -127,7 +160,7 @@ San Francisco, CA, USA
 
 ![inline](tweet-lhoguin-834869334174466048.png)
 
-^ I'm going to show you a couple of tweets from Loïc Hoguin, the author of Cowboy, telling tips on getting your patches or pull requests merged. The first one tells that sending a large patch abruptly without a thorough discussion beforehard will always be rejected.
+^ The first one tells that sending a large patch abruptly without a thorough discussion beforehard will always be rejected.
 
 ---
 
@@ -145,6 +178,53 @@ San Francisco, CA, USA
 ![inline](tweet-lhoguin-834869820042645504.png)
 
 ^ And this last tweet tells that constantly discussing around the changes is the key for a successful communication on software development.
+
+---
+
+# What to include in a GitHub PR
+
+* **What you are going to do with the PR**
+* **How the PR changes the behavior of the code**
+* **What and how the changes will and *will not* affect the other modules and applications**
+* **Common Test cases** and **type specifications**
+* **Documentation**
+
+^ When you are going to issue a pull request or a PR, you need to tell what you are going to do with it and how it changes and affects or does not affect the other modules. You also need to include the Common Test cases and the type specifications, and the documentation.
+
+---
+
+# What to do when issue a PR
+
+* **Report the bug before submitting a bugfix PR**
+* **Choose the right branch**
+* **Separate commits for separate changes**
+* **Make sure that each commit can be compiled**
+* **Make sure that each commit works**
+* **Use `git rebase` so that OTP Team can `git bisect`**
+
+^ For a bugfix PR, a bug report must be issued. You also need to choose the right branch, which is the master branch for new features, while the maint branch will be appropriate for a bugfix to a release. You need to issue separate commits for separate changes, and each commit in a PR should be able to be compiled and work well. This is a requirement so that OTP Team can use the git bisect command. OTP Team may request you to squash multiple commits, so you need to get accustomed to use git rebase.
+
+---
+
+# Communication with OTP Team
+
+* **Choose the GitHub Issues and private email wisely**
+* **OTP Team are working in Central *European* Time Zone**
+* **In Europe, DST is different from USA/Canada**
+* **OTP Team have their weekends, holidays, and vacations**
+* **Don't expect a prompt reply during non-working hours**
+* **OTP Team members have to handle multiple modules**
+
+^ Maintaining steady communication with the OTP Team is very important. They may send you some private email, so use them wisely. They are also in Sweden, so the time zone and the daylight saving time schedule is different from USA. They have their weekends and holidays because OTP Team members have to deal with Erlang/OTP as their duty and business. So don't expect a prompt reply in non-working houts. Also, each OTP Team member has to handle multiple pieces of software, so time for you is usually limited.
+
+---
+
+# How to gain community support for your code
+
+^ Let me move on to how to gain community support for your code.
+
+---
+
 
 ---
 
