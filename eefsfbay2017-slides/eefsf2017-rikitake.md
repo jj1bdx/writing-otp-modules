@@ -81,3 +81,7 @@ Photo credits:
 # [fit] Questions?
 
 ^ Thank you!
+
+<!-- Local Variables: -->
+<!-- coding: utf-8 -->
+<!-- End: -->
