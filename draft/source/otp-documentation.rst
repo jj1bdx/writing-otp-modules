@@ -22,7 +22,12 @@ understood by reading actual XML documentation.
 Example of rand module documentation
 ------------------------------------
 
-For prototyping ``rand`` module, I set up a locally executable documentation build environment. See `the xml-doc directory of the prototype repository <https://github.com/jj1bdx/emprng/tree/0.9.2/xml-doc>`_ for the further details.
+For prototyping ``rand`` module, I set up a locally executable
+documentation build environment. See `the xml-doc directory of the
+prototype repository
+<https://github.com/jj1bdx/emprng/tree/0.9.2/xml-doc>`_ for the further
+details. `You can also try doing full building of the documentation
+<https://github.com/erlang/otp/wiki/Documentation>`_.
 
 The following list is an example source XML file for Erlang/OTP ``rand``
 module, `as provided in the prototype repository
