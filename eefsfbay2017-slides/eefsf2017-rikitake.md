@@ -67,14 +67,6 @@ San Francisco, CA, USA
 
 ---
 
-# WARNING
-
-## Don't try commiting code only for nurturing your ego or just for your own fame, please
-
-^ There's one thing I need to mention before getting into the details. I've observed that quite a lot of people write software for their psycological need for approval, and for their own fame. It is a bad approach for writing open source software, and often becomes destructive to the project. So don't do it.
-
----
-
 # Why new code?
 
 ## Bugfix/security
@@ -115,6 +107,46 @@ San Francisco, CA, USA
 
 ---
 
+# Common Test and parallelism
+
+```erlang
+all() -> % From OTP master lib/stdlib/test/rand.erl
+    [seed, interval_int, interval_float, api_eq, reference,
+     {group, basic_stats},
+     plugin, measure,
+     {group, reference_jump}].
+groups() ->
+    [{basic_stats, [parallel],
+     [basic_stats_uniform_1, basic_stats_uniform_2,
+      basic_stats_normal]},
+     {reference_jump, [parallel],
+      [reference_jump_state, reference_jump_procdict]}].
+```
+
+^ In Common Test, you can define the sequences of the test in all/0 function, and you can also define groups of functions to execute in parallel.
+
+---
+
+# Improper lists and Dialyzer
+
+```erlang
+%%% From OTP master lib/stdlib/src/rand.erl
+%%% Directive to ignore improper list
+-dialyzer({no_improper_lists, exsplus_next/1}).
+
+-type exsplus_state() :: nonempty_improper_list(uint58(), uint58()).
+-spec exsplus_next(exsplus_state()) -> {uint58(), exsplus_state()}.
+exsplus_next([S1|S0]) ->
+    %% Note: members s0 and s1 are swapped here
+    S11 = (S1 bxor (S1 bsl 24)) band ?UINT58MASK,
+    S12 = S11 bxor S0 bxor (S11 bsr 11) bxor (S0 bsr 41),
+    {(S0 + S12) band ?UINT58MASK, [S0|S12]}.
+```
+
+^ Rand module's exsplus function has an interesting property. It uses an improper list, which means the tail element is filled with something other than null list. This is to reduce execution overhead, but Dialyzer doesn't like it in the default setting. So you need to specify `-dialyzer()` attribute to disable error checking the function with improper lists.
+
+---
+
 # erl_docgen document example
 
 ```xml
@@ -134,25 +166,21 @@ San Francisco, CA, USA
 </func>
 ```
 
-^ This is an erl_docgen document example taken from the rand module document. It's neither a Markdown nor an HTML. 
+^ This is an erl_docgen document example taken from the rand module document. It's neither a Markdown nor an HTML. It's an XML with specific tags. You need to get accustomed to these tags for writing OTP manual.
 
 ---
 
 ![](rand-erl_docgen.png)
 
-^ This an an example of HTML page rendered from the erl_docgen document.
+^ This an an example of HTML page rendered from the erl_docgen document. The part I showed is in the dotted line.
 
 ---
 
-# Working with OTP Team
+# [fit] Working with OTP Team:
 
-^ Now I'd like to talk about how to work with OTP Team.
+# Advice from the author of Cowboy
 
----
-
-# Let me show you some excellent tweets from the author of Cowboy HTTP server
-
-^ I'm going to show you a couple of tweets from Loïc Hoguin, the author of Cowboy, telling tips on getting your patches or pull requests merged, on February 2017.
+^ Now I'd like to talk about how to work with OTP Team. I'm going to show you a couple of tweets from Loïc Hoguin, the author of Cowboy, telling tips on getting your patches or pull requests merged, on February 2017.
 
 ---
 
