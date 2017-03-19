@@ -245,12 +245,12 @@ San Francisco, CA, USA
 
 ^ When you add a module to Erlang/OTP, that means you are also responsible for maintaining the module, especially when the security issues or vulnerabilities are found. You have no legal duty but are supposed to provide a help when it is requested by the OTP Team. you are also expected to contribute a further enhancement or a new feature when they are available. An unmaintained piece of code will be deprecated and removed from OTP by the OTP Team's discretion. Also, OTP Team generally takes conservative approach to change,s o you need to be careful on adding a new feature to an existing module.
 
-___
+---
 
 # Licenses for Erlang/OTP
 
 * **Erlang/OTP: Apache License 2 (APLv2)**
-* **APLv2: *inconpatible* with GPLv2 and GPLv3**
+* **APLv2: _inconpatible_ with GPLv2 and GPLv3**
 * **MIT and BSD License code can be easily incorporated**
 * **Your code may need to be relicensed to OTP Team**
   - The copyright notice is limited in simple manners
