@@ -110,7 +110,7 @@ San Francisco, CA, USA
 # Common Test and parallelism
 
 ```erlang
-all() -> % From OTP master lib/stdlib/test/rand.erl
+all() -> % From OTP master lib/stdlib/test/rand_SUITE.erl
     [seed, interval_int, interval_float, api_eq, reference,
      {group, basic_stats},
      plugin, measure,
@@ -188,7 +188,7 @@ exsplus_next([S1|S0]) ->
 
 ![inline](tweet-lhoguin-834869334174466048.png)
 
-^ The first one tells that sending a large patch abruptly without a thorough discussion beforehard will always be rejected.
+^ The first one tells that sending a large patch abruptly without a thorough discussion beforehand will always be rejected.
 
 ---
 
@@ -271,7 +271,7 @@ exsplus_next([S1|S0]) ->
 * **Old code may be deprecated and removed**
 * **Adding new features should be done _very carefully_**
 
-^ When you add a module to Erlang/OTP, that means you are also responsible for maintaining the module, especially when the security issues or vulnerabilities are found. You have no legal duty but are supposed to provide a help when it is requested by the OTP Team. you are also expected to contribute a further enhancement or a new feature when they are available. An unmaintained piece of code will be deprecated and removed from OTP by the OTP Team's discretion. Also, OTP Team generally takes conservative approach to change,s o you need to be careful on adding a new feature to an existing module.
+^ When you add a module to Erlang/OTP, that means you are also responsible for maintaining the module, especially when the security issues or vulnerabilities are found. You have no legal duty but are supposed to provide a help when it is requested by the OTP Team. you are also expected to contribute a further enhancement or a new feature when they are available. An unmaintained piece of code will be deprecated and removed from OTP by the OTP Team's discretion. Also, OTP Team generally takes conservative approach to change, so you need to be careful on adding a new feature to an existing module.
 
 ---
 
@@ -283,7 +283,7 @@ exsplus_next([S1|S0]) ->
 * **Your code may need to be relicensed to OTP Team**
   - The copyright notice is limited in simple manners
 
-^ Erlang/OTP has been licensed under Apache License 2.0 since OTP 18. Mixing source code which has other licenses than Apache License 2.0 should be done carefully. For example, software under GNU Public License (GPL) cannot be directly linked to Erlang/OTP, due to the license compatiblity with Apache License 2.0. ncluding MIT and BSD license code in Erlang/OTP does not require any special process. You may need to relicense your code to OTP Team. OTP Team will let you know the details on the exact conditions before merging your code, so that the legal issues will be cleared.
+^ Erlang/OTP has been licensed under Apache License 2.0 since OTP 18. Mixing source code which has other licenses than Apache License 2.0 should be done carefully. For example, software under GNU Public License (GPL) cannot be directly linked to Erlang/OTP, due to the license compatiblity with Apache License 2.0. including MIT and BSD license code in Erlang/OTP does not require any special process. You may need to relicense your code to OTP Team. OTP Team will let you know the details on the exact conditions before merging your code, so that the legal issues will be cleared.
 
 ---
 
