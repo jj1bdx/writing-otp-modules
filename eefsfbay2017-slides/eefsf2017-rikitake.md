@@ -272,7 +272,9 @@ San Francisco, CA, USA
 # References
 
 * [My WIP document: Writing OTP Modules](http://docs.jj1bdx.tokyo/writing-otp-modules/html/index.html)
+    - [http://docs.jj1bdx.tokyo/writing-otp-modules/html/index.html](http://docs.jj1bdx.tokyo/writing-otp-modules/html/index.html)
 * [Source of Writing OTP Modules](https://github.com/jj1bdx/writing/otp-modules)
+    - [https://github.com/jj1bdx/writing/otp-modules](https://github.com/jj1bdx/writing/otp-modules)
 
 ^ I've written a work-in-progress document regarding this presentation called Writing OTP Modules. Your feedback to the document is highly welcome.
 
