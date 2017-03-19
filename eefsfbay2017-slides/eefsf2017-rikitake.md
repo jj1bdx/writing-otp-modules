@@ -250,7 +250,7 @@ San Francisco, CA, USA
 # Licenses for Erlang/OTP
 
 * **Erlang/OTP: Apache License 2 (APLv2)**
-* **APLv2: _inconpatible_ with GPLv2 and GPLv3**
+* **APLv2: _incompatible_ with GPLv2 and GPLv3**
 * **MIT and BSD License code can be easily incorporated**
 * **Your code may need to be relicensed to OTP Team**
   - The copyright notice is limited in simple manners
