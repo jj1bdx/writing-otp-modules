@@ -176,6 +176,8 @@ exsplus_next([S1|S0]) ->
 
 ---
 
+![](johann-walter-bantz-198023-slide.jpg)
+
 # [fit] Working with OTP Team:
 
 # Advice from the author of Cowboy
@@ -345,6 +347,7 @@ Photo credits:
 * Title slide: Davide Ragusa, from Unsplash.com
 * Kenji Rikitake's face: Yutaka Sakurai and Naoki Sakurai, taken in front of USS Pampanito at Pier 45, San Francisco, CA, USA, March 2015
 * "This talk is not about" slide: Markus Spiske, from Unsplash.com
+* "Working with OTP Team" slide: Johann Walter Bantz, from Unsplash.com
 * "OTP needs your help" slide: Matheus Ferrero, from Unsplash.com
 * "Thank you" slide: Chris Brignola, from Unsplash.com
 
