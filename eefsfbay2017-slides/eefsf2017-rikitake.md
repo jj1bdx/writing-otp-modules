@@ -61,6 +61,8 @@ San Francisco, CA, USA
 
 ---
 
+![](luis-llerena-14779-slides.jpg)
+
 # Development for Erlang/OTP
 
 ^ I'd like to talk about software development for Erlang/OTP.
@@ -96,6 +98,9 @@ San Francisco, CA, USA
 ^ The rational for including rand module was mainly to fix the security issues of random module. The random module is exploitable within less than 10 hours. Eliminating the need for initialization is an improvement for the API. Selecting multiple algorithms and providing normal distribution generator are already available as the new features. From OTP 20 you will be able to use the jump functions too. The important point is that you need to have a rationale that can convince all users of Erlang.
 
 ---
+
+![](bram-naus-200967-slides.jpg)
+
 
 # Prototyping
 
@@ -249,6 +254,8 @@ exsplus_next([S1|S0]) ->
 
 ---
 
+![](clem-onojeghuo-110452-slides.jpg)
+
 # How to gain community support for your code
 
 ^ Let me move on to how to gain community support for your code.
@@ -347,7 +354,10 @@ Photo credits:
 * Title slide: Davide Ragusa, from Unsplash.com
 * Kenji Rikitake's face: Yutaka Sakurai and Naoki Sakurai, taken in front of USS Pampanito at Pier 45, San Francisco, CA, USA, March 2015
 * "This talk is not about" slide: Markus Spiske, from Unsplash.com
+* "Development for Erlang/OTP" slide: Luis Llerena, from Unsplash.com
+* "Prototyping" slide: Bram Naus, from Unsplash.com
 * "Working with OTP Team" slide: Johann Walter Bantz, from Unsplash.com
+* "How to gain community support" slide: Clem Onojeghuo, from Unsplash.com
 * "OTP needs your help" slide: Matheus Ferrero, from Unsplash.com
 * "Thank you" slide: Chris Brignola, from Unsplash.com
 
