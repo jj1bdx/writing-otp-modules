@@ -89,11 +89,12 @@ San Francisco, CA, USA
 
 ---
 
-# [fit] Rationale for `rand` module
+# Rationale for `rand` module
 
-* **`random` module period is too short and exploitable within <10 hours with a modern desktop computer, so it's basically a security fix**
-* **Fixing API: eliminating the need for initialization**
-* **New features: selecting multiple algorithms, normal distribution generator, jump functions from OTP 20**
+## Period too short
+## Better API (no initialization)
+## Multiple algorithms
+## Other features
 
 ^ The rational for including rand module was mainly to fix the security issues of random module. The random module is exploitable within less than 10 hours. Eliminating the need for initialization is an improvement for the API. Selecting multiple algorithms and providing normal distribution generator are already available as the new features. From OTP 20 you will be able to use the jump functions too. The important point is that you need to have a rationale that can convince all users of Erlang.
 
@@ -218,24 +219,21 @@ exsplus_next([S1|S0]) ->
 
 # What to include in a GitHub PR
 
-* **What you are going to do with the PR**
-* **How the PR changes the behavior of the code**
-* **What and how the changes will and *will not* affect the other modules and applications**
-* **Common Test cases** and **type specifications**
-* **Documentation**
+## What and how to do
+## What will be affected
+## Test cases and type specs
+## Documentation
 
 ^ When you are going to issue a pull request or a PR, you need to tell what you are going to do with it and how it changes and affects or does not affect the other modules. You also need to include the Common Test cases and the type specifications, and the documentation.
 
 ---
 
-# What to do when issue a PR
+# How to issue a PR
 
-* **Report the bug before submitting a bugfix PR**
-* **Choose the right branch**
-* **Separate commits for separate changes**
-* **Make sure that each commit can be compiled**
-* **Make sure that each commit works**
-* **Use `git rebase` so that OTP Team can `git bisect`**
+## Report bugs _before_ PR
+## Choose right branch
+## [fit] Separate commits for separate changes
+## Make sure each commit works
 
 ^ For a bugfix PR, a bug report must be issued. You also need to choose the right branch, which is the master branch for new features, while the maint branch will be appropriate for a bugfix to a release. You need to issue separate commits for separate changes, and each commit in a PR should be able to be compiled and work well. This is a requirement so that OTP Team can use the git bisect command. OTP Team may request you to squash multiple commits, so you need to get accustomed to use git rebase.
 
@@ -243,12 +241,10 @@ exsplus_next([S1|S0]) ->
 
 # Communication with OTP Team
 
-* **Choose the GitHub Issues and private email wisely**
-* **OTP Team are working in Central *European* Time Zone**
-* **In Europe, DST is different from USA/Canada**
-* **OTP Team have their weekends, holidays, and vacations**
-* **Don't expect a prompt reply during non-working hours**
-* **OTP Team members have to handle multiple modules**
+## Use private emails if needed
+## OTP Team work in Sweden Time
+## OTP Team have their weekends
+## [fit] OTP Team have to handle many modules
 
 ^ Maintaining steady communication with the OTP Team is very important. They may send you some private email, so use them wisely. They are also in Sweden, so the time zone and the daylight saving time schedule is different from USA. They have their weekends and holidays because OTP Team members have to deal with Erlang/OTP as their duty and business. So don't expect a prompt reply in non-working houts. Also, each OTP Team member has to handle multiple pieces of software, so time for you is usually limited.
 
@@ -264,10 +260,9 @@ exsplus_next([S1|S0]) ->
 
 # Promote your code
 
-* **Publish ready-to-use modules on GitHub and elsewhere**
-* **`rand` module have *six* related modules released**
-* **Give talks and publish papers on conferences**
-* **Write a PoC and show what the problem is**
+## Publish on GitHub and elsewhere
+## Give talks at conferences
+## Write PoC and show the problems
 
 ^ For earning the community support, promoting your code is essential. Publishing ready-to-use modules is effective for obtaining feedbacks from other developers. Rand module have six related published modules. Giving talks and publishing papers on conferences are also effective. Rand module have six presentations in major conferences, workshops, and meetups. If your code is related to a security issue, writing a proof-of-concept code and showing the problem will help convincing OTP Team to understand the severity of the issue.
 
@@ -275,24 +270,22 @@ exsplus_next([S1|S0]) ->
 
 # Code maintenance and support
 
-* **When your code is in OTP you are responsible as the same as the OTP maintainers for the part of the code**
-* **You are expected to contribute a further enhancement or a new feature when they are available**
-* **Old code may be deprecated and removed**
-* **Adding new features should be done _very carefully_**
+## You are responsible for your code
+## Further contribution expected
+## Old code may be removed
+## Be careful on adding features
 
 ^ When you add a module to Erlang/OTP, that means you are also responsible for maintaining the module, especially when the security issues or vulnerabilities are found. You have no legal duty but are supposed to provide a help when it is requested by the OTP Team. you are also expected to contribute a further enhancement or a new feature when they are available. An unmaintained piece of code will be deprecated and removed from OTP by the OTP Team's discretion. Also, OTP Team generally takes conservative approach to change, so you need to be careful on adding a new feature to an existing module.
 
 ---
 
-# Licenses for Erlang/OTP
+# Erlang/OTP License: Apache 2
 
-* **Erlang/OTP: Apache License 2 (APLv2)**
-* **APLv2: _incompatible_ with GPLv2 and GPLv3**
-* **MIT and BSD License code can be easily incorporated**
-* **Your code may need to be relicensed to OTP Team**
-  - The copyright notice is limited in simple manners
+## _incompatible_ with GPLv2/v3
+## MIT/BSD code: ok to merge
+## Relicensing often needed
 
-^ Erlang/OTP has been licensed under Apache License 2.0 since OTP 18. Mixing source code which has other licenses than Apache License 2.0 should be done carefully. For example, software under GNU Public License (GPL) cannot be directly linked to Erlang/OTP, due to the license compatiblity with Apache License 2.0. including MIT and BSD license code in Erlang/OTP does not require any special process. You may need to relicense your code to OTP Team. OTP Team will let you know the details on the exact conditions before merging your code, so that the legal issues will be cleared.
+^ Erlang/OTP has been licensed under Apache License 2.0 since OTP 18. Mixing source code which has other licenses than Apache License 2.0 should be done carefully. For example, software under GNU Public License (GPL) cannot be directly linked to Erlang/OTP, due to the license compatiblity with Apache License 2.0. including MIT and BSD license code in Erlang/OTP does not require any special process. You may need to relicense your code to OTP Team. OTP Team will let you know the details on the exact conditions before merging your code, so that the legal issues will be cleared. In many cases, all you can add is your name and copyright year.
 
 ---
 
